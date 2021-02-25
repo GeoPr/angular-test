@@ -1,0 +1,17 @@
+.btn {
+  color: #000;
+  margin: 0px 20px;
+  padding: 0px 20px;
+  height: 40px;
+}
+.text {
+  &.red {
+    color: red;
+  }
+  &.orange {
+    color: orange;
+  }
+  &.blue {
+    color: blue;
+  }
+}

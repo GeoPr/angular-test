@@ -1,0 +1,39 @@
+<div class="wrapper">
+  <section class="sc">
+    <button (click)="isContentVisible = !isContentVisible" class="btn">
+      Toggle content
+    </button>
+
+    <div *ngIf="isContentVisible; else empty" class="content">
+      <pre>
+        {{ obj | json }} 
+      </pre>
+      <div>{{ myProp }}</div>
+      <app-list [arr]="arr"></app-list>
+      <h1>{{ title }}</h1>
+      <button class="btn" (click)="onClick()">Click</button>
+      <span> {{ v }} </span>
+      <!-- <input type="text" (input)="onChange($event)" class="inp" [value]="v" /> -->
+      <input type="text" [(ngModel)]="v" class="inp" [value]="v" />
+      <!-- two way binding -->
+      <span
+        [ngStyle]="{
+          color: v2.length < 5 ? 'red' : '#fff'
+        }"
+        >{{ v2 }}</span
+      >
+      <input
+        type="text"
+        #likeRef
+        (input)="onChangeWithRef(likeRef.value)"
+        class="inp"
+        [value]="v2"
+      />
+
+      <app-buttons></app-buttons>
+    </div>
+
+    <ng-template #empty> else condition </ng-template>
+    <!-- pipe -->
+  </section>
+</div>

@@ -1,0 +1,15 @@
+<div>
+  <span
+    class="text"
+    [ngClass]="{
+      red: color === 'red',
+      blue: color === 'blue'
+    }"
+    [class.orange]="color === 'orange'"
+  >
+    text
+  </span>
+  <button class="btn" (click)="setColor('red')">red</button>
+  <button class="btn" (click)="setColor('blue')">blue</button>
+  <button class="btn" (click)="setColor('orange')">orange</button>
+</div>

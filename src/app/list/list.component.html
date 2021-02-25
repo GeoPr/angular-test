@@ -1,0 +1,7 @@
+<ul *ngFor="let item of arr">
+  <li (click)="remove(item.id)" [ngStyle]="{ cursor: 'pointer' }">
+    <span>{{ item.date | date: "dd MMMM yyyy HH:mm:ss" }}</span>
+    <div>{{ item.title }}</div>
+  </li>
+</ul>
+<span *ngIf="isMounted"> After timeout </span>
